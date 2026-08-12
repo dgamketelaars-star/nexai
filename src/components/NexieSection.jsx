@@ -13,7 +13,7 @@ export default function NexieSection({ onOpenChat }) {
 
           <div className="relative flex flex-col items-center gap-10 lg:flex-row lg:gap-16">
             <div className="w-full text-center lg:w-1/2 lg:text-left">
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-blue dark:text-brand-cyan">
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-cyan">
                 <Sparkles size={13} />
                 Niet zeker waar te beginnen?
               </span>

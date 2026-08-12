@@ -86,7 +86,7 @@ export default function NexieChat({ isOpen, onOpen, onClose }) {
                   type="button"
                   onClick={() => sendMessage(option)}
                   className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-3.5 py-2.5
-                    text-left text-sm font-medium text-[var(--text-primary)] transition-colors hover:border-brand-cyan/50 hover:text-brand-blue dark:hover:text-brand-cyan cursor-pointer"
+                    text-left text-sm font-medium text-[var(--text-primary)] transition-colors hover:border-brand-cyan/50 hover:text-brand-cyan cursor-pointer"
                 >
                   {option}
                 </button>

@@ -62,7 +62,7 @@ export default function HeroVideo() {
           <HeroVideoTag className="absolute inset-0 h-full w-full object-cover object-[right_center]" />
           <div
             className="absolute inset-0"
-            style={{ background: 'linear-gradient(0deg, var(--bg-app) 0%, transparent 45%, transparent 100%)' }}
+            style={{ background: 'linear-gradient(0deg, var(--bg-hero-scrim) 0%, transparent 45%, transparent 100%)' }}
           />
           <div className="pointer-events-none absolute -left-16 bottom-0 h-40 w-40 rounded-full bg-brand-blue/25 blur-[70px]" />
         </div>
@@ -87,14 +87,14 @@ export default function HeroVideo() {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(90deg, var(--bg-app) 0%, color-mix(in srgb, var(--bg-app) 78%, transparent) 28%, color-mix(in srgb, var(--bg-app) 25%, transparent) 55%, transparent 75%)',
+              'linear-gradient(90deg, var(--bg-hero-scrim) 0%, color-mix(in srgb, var(--bg-hero-scrim) 78%, transparent) 28%, color-mix(in srgb, var(--bg-hero-scrim) 25%, transparent) 55%, transparent 75%)',
           }}
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(0deg, var(--bg-app) 0%, transparent 22%, transparent 78%, color-mix(in srgb, var(--bg-app) 55%, transparent) 100%)',
+              'linear-gradient(0deg, var(--bg-hero-scrim) 0%, transparent 22%, transparent 78%, color-mix(in srgb, var(--bg-hero-scrim) 55%, transparent) 100%)',
           }}
         />
 

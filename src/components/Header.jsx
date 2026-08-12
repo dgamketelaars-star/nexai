@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import ThemeToggle from './ThemeToggle'
 
 const NAV_LINKS = [
   { label: 'Home', href: '#home' },
@@ -8,7 +7,7 @@ const NAV_LINKS = [
   { label: 'Over NexAI', href: '#over' },
 ]
 
-export default function Header({ theme, onToggleTheme }) {
+export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
@@ -38,7 +37,6 @@ export default function Header({ theme, onToggleTheme }) {
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          <ThemeToggle theme={theme} onToggle={onToggleTheme} />
           <button
             type="button"
             onClick={() => setMenuOpen((o) => !o)}

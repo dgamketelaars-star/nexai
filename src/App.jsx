@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { TrendingUp, Wrench, Box, CheckCircle2, Code2, Cpu } from 'lucide-react'
-import { useTheme } from './hooks/useTheme'
 import Header from './components/Header'
 import HeroVideo from './components/HeroVideo'
 import Intro from './components/Intro'
@@ -10,12 +9,11 @@ import NexieChat from './components/NexieChat'
 import Footer from './components/Footer'
 
 function App() {
-  const { theme, toggleTheme } = useTheme()
   const [chatOpen, setChatOpen] = useState(false)
 
   return (
     <div className="min-h-screen bg-[var(--bg-app)]">
-      <Header theme={theme} onToggleTheme={toggleTheme} />
+      <Header />
 
       <main>
         <HeroVideo />

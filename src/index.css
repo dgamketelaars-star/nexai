@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
 
@@ -26,24 +24,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* base surfaces, tuned per-theme so light/dark feel like one identity */
+/* Single "midnight slate" theme: deep blue-grey surfaces instead of near-black or white,
+   with alternating slate tones between sections for rhythm. The hero keeps its own,
+   deliberately darker scrim so the video stays dramatic while the rest of the UI stays lighter. */
 :root {
-  --bg-app: #ffffff;
-  --bg-surface: #f0f4fb;
-  --bg-surface-2: #ffffff;
-  --border-subtle: #e6e9f0;
-  --text-primary: #0b1220;
-  --text-secondary: #56607a;
-  --glow-primary: rgba(37, 99, 235, 0.18);
-}
-
-.dark {
-  --bg-app: #05070d;
-  --bg-surface: #0d1428;
-  --bg-surface-2: #101a34;
-  --border-subtle: rgba(148, 163, 253, 0.14);
-  --text-primary: #f5f7ff;
-  --text-secondary: #9aa4c2;
+  --bg-app: #131b2d;
+  --bg-surface: #1c2740;
+  --bg-surface-2: #232f52;
+  --bg-hero-scrim: #05070d;
+  --border-subtle: rgba(148, 163, 253, 0.16);
+  --text-primary: #eef1f8;
+  --text-secondary: #92a0c4;
   --glow-primary: rgba(56, 189, 248, 0.18);
 }
 
@@ -54,7 +45,7 @@ body {
 
 ::selection {
   background: var(--color-brand-cyan);
-  color: #05070d;
+  color: var(--bg-hero-scrim);
 }
 
 .scrollbar-none::-webkit-scrollbar {
