@@ -14,7 +14,7 @@ export default function Header() {
     <header
       id="home"
       className="sticky top-0 z-50 border-b border-[var(--border-subtle)]
-        bg-[var(--bg-surface-2)]/95 shadow-sm shadow-black/5 backdrop-blur-md"
+        bg-white/90 shadow-sm shadow-slate-900/5 backdrop-blur-md"
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
         <a href="#home" className="flex items-center gap-1.5 text-lg font-semibold tracking-tight">

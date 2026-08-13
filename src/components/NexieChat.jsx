@@ -39,7 +39,7 @@ export default function NexieChat({ isOpen, onOpen, onClose }) {
         aria-label="Nexie chat"
         className={`fixed bottom-5 right-5 z-50 flex h-[min(560px,calc(100vh-3rem))] w-[min(380px,calc(100vw-2.5rem))]
           origin-bottom-right flex-col overflow-hidden rounded-2xl border border-[var(--border-subtle)]
-          bg-[var(--bg-surface-2)] shadow-2xl transition-all duration-200 sm:bottom-7 sm:right-7 ${
+          bg-white shadow-2xl transition-all duration-200 sm:bottom-7 sm:right-7 ${
             isOpen ? 'scale-100 opacity-100' : 'pointer-events-none scale-95 opacity-0'
           }`}
       >

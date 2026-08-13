@@ -4,8 +4,9 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   --color-brand-blue: #2563eb;
-  --color-brand-cyan: #22d3ee;
-  --color-brand-purple: #7c3aed;
+  --color-brand-cyan: #38bdf8;
+  --color-brand-purple: #6b5fe0;
+  --color-brand-navy: #0b1730;
 
   --animate-float: float 6s ease-in-out infinite;
 }
@@ -24,18 +25,23 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Single "midnight slate" theme: deep blue-grey surfaces instead of near-black or white,
-   with alternating slate tones between sections for rhythm. The hero keeps its own,
-   deliberately darker scrim so the video stays dramatic while the rest of the UI stays lighter. */
+/* Light-first "NexAI" theme: the page is predominantly white/off-white, with deep navy
+   reserved for a few deliberate contrast points (hero, cards, footer) rather than the
+   base. Brand blue carries the primary identity; purple is used only as a rare, selective
+   accent (Nexie's own signature), never as a base color. */
 :root {
-  --bg-app: #131b2d;
-  --bg-surface: #1c2740;
-  --bg-surface-2: #232f52;
-  --bg-hero-scrim: #05070d;
-  --border-subtle: rgba(148, 163, 253, 0.16);
-  --text-primary: #eef1f8;
-  --text-secondary: #92a0c4;
-  --glow-primary: rgba(56, 189, 248, 0.18);
+  --bg-app: #f8fafc;
+  --bg-surface: #eef2f9;
+  --bg-navy: #0b1730;
+  --bg-navy-2: #142445;
+  --bg-hero-scrim: #060a16;
+  --border-subtle: rgba(16, 27, 51, 0.1);
+  --border-subtle-dark: rgba(255, 255, 255, 0.14);
+  --text-primary: #101b33;
+  --text-secondary: #57647f;
+  --text-primary-dark: #f3f6fc;
+  --text-secondary-dark: #a6b2ce;
+  --glow-primary: rgba(37, 99, 235, 0.18);
 }
 
 body {

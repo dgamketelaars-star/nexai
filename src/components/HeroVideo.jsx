@@ -3,8 +3,8 @@ import { ArrowRight } from 'lucide-react'
 function Badge() {
   return (
     <span
-      className="mb-5 inline-flex items-center gap-2 rounded-full border border-[var(--border-subtle)]
-        bg-[var(--bg-surface)]/60 px-3.5 py-1.5 text-xs font-medium text-[var(--text-secondary)] backdrop-blur-sm"
+      className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15
+        bg-white/10 px-3.5 py-1.5 text-xs font-medium text-[var(--text-secondary-dark)] backdrop-blur-sm"
     >
       <span className="h-1.5 w-1.5 rounded-full bg-brand-cyan shadow-[0_0_8px_2px] shadow-brand-cyan/60" />
       AI &amp; automatisering voor kleine bedrijven
@@ -14,10 +14,10 @@ function Badge() {
 
 function Heading({ className = '' }) {
   return (
-    <h1 className={`font-bold leading-[1.08] tracking-tight text-[var(--text-primary)] ${className}`}>
+    <h1 className={`font-bold leading-[1.08] tracking-tight text-[var(--text-primary-dark)] ${className}`}>
       Slimme technologie.
       <br />
-      <span className="bg-gradient-to-r from-brand-blue via-brand-cyan to-brand-purple bg-clip-text text-transparent">
+      <span className="bg-gradient-to-r from-brand-blue to-brand-cyan bg-clip-text text-transparent">
         Gewoon goed geregeld.
       </span>
     </h1>
@@ -66,10 +66,10 @@ export default function HeroVideo() {
           />
           <div className="pointer-events-none absolute -left-16 bottom-0 h-40 w-40 rounded-full bg-brand-blue/25 blur-[70px]" />
         </div>
-        <div className="px-5 pb-10 pt-7">
+        <div className="bg-[var(--bg-hero-scrim)] px-5 pb-10 pt-7">
           <Badge />
           <Heading className="text-4xl" />
-          <p className="mt-4 max-w-md text-base text-[var(--text-secondary)]">
+          <p className="mt-4 max-w-md text-base text-[var(--text-secondary-dark)]">
             AI, automatisering en digitale oplossingen voor kleine bedrijven en ondernemers.
           </p>
           <div className="mt-7">
@@ -100,13 +100,13 @@ export default function HeroVideo() {
 
         {/* subtle brand glow */}
         <div className="pointer-events-none absolute -left-32 top-1/3 h-72 w-72 rounded-full bg-brand-blue/25 blur-[100px]" />
-        <div className="pointer-events-none absolute left-10 bottom-10 h-56 w-56 rounded-full bg-brand-purple/20 blur-[100px]" />
+        <div className="pointer-events-none absolute left-10 bottom-10 h-56 w-56 rounded-full bg-brand-cyan/15 blur-[100px]" />
 
         <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-8">
           <div className="max-w-xl">
             <Badge />
             <Heading className="text-5xl lg:text-6xl" />
-            <p className="mt-5 max-w-md text-lg text-[var(--text-secondary)]">
+            <p className="mt-5 max-w-md text-lg text-[var(--text-secondary-dark)]">
               AI, automatisering en digitale oplossingen voor kleine bedrijven en ondernemers.
             </p>
             <div className="mt-8">

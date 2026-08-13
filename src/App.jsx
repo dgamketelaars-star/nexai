@@ -29,7 +29,7 @@ function App() {
             ctaLabel="Bekijk FIX"
             icon={Wrench}
             secondaryIcon={CheckCircle2}
-            accent="purple"
+            accent="deep"
           />
 
           <CategorySection
@@ -55,7 +55,7 @@ function App() {
             ctaLabel="Bekijk SMART"
             icon={TrendingUp}
             secondaryIcon={Cpu}
-            accent="emerald"
+            accent="sky"
           />
         </div>
 
