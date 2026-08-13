@@ -40,11 +40,11 @@ export default function CategorySection({
   const bgClass = surface ? 'bg-[var(--bg-surface)]' : 'bg-[var(--bg-surface)] sm:bg-[var(--bg-app)]'
 
   return (
-    <section id={id} className={`border-t border-[var(--border-subtle)] py-11 sm:py-16 ${bgClass}`}>
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section id={id} className={`py-0 sm:border-t sm:border-[var(--border-subtle)] sm:py-16 ${bgClass}`}>
+      <div className="mx-auto max-w-7xl px-0 sm:px-8">
         <div className={`flex flex-col items-center gap-0 sm:gap-10 lg:gap-16 ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
           {/* Tablet/desktop: the category's "dark visual card" — unchanged from before */}
-          <div className="group relative hidden w-full sm:block lg:w-1/2">
+          <div className="w-full px-5 py-10 sm:px-0 sm:py-0 lg:w-1/2">
             <div className={`pointer-events-none absolute inset-10 rounded-full blur-[70px] ${a.glow}`} />
             <div
               className={`relative flex aspect-[16/10] w-full items-center justify-center overflow-hidden rounded-3xl
