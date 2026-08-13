@@ -37,23 +37,12 @@ export default function CategorySection({
   surface = false,
 }) {
   const a = ACCENTS[accent]
+  const bgClass = surface ? 'bg-[var(--bg-surface)]' : 'bg-[var(--bg-surface)] sm:bg-[var(--bg-app)]'
 
   return (
-    <section
-      id={id}
-      className={`border-t border-[var(--border-subtle)] py-11 sm:py-16 ${surface ? 'bg-[var(--bg-surface)]' : ''}`}
-    >
+    <section id={id} className={`border-t border-[var(--border-subtle)] py-11 sm:py-16 ${bgClass}`}>
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className={`flex flex-col items-center gap-10 lg:gap-16 ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
-          {/* Mobile only: the image runs edge-to-edge as a full-width band, no card around it */}
-          {image && (
-            <img
-              src={image}
-              alt={imageAlt || title}
-              className="ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] block h-auto w-screen max-w-none sm:hidden"
-            />
-          )}
-
+        <div className={`flex flex-col items-center gap-0 sm:gap-10 lg:gap-16 ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
           {/* Tablet/desktop: the category's "dark visual card" — unchanged from before */}
           <div className="group relative hidden w-full sm:block lg:w-1/2">
             <div className={`pointer-events-none absolute inset-10 rounded-full blur-[70px] ${a.glow}`} />
@@ -125,6 +114,15 @@ export default function CategorySection({
               <ArrowRight size={15} />
             </a>
           </div>
+
+          {/* Mobile only: the image runs edge-to-edge as a full-width band directly under the text, no card or gap around it */}
+          {image && (
+            <img
+              src={image}
+              alt={imageAlt || title}
+              className="ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] block h-auto w-screen max-w-none sm:hidden"
+            />
+          )}
         </div>
       </div>
     </section>
