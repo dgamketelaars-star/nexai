@@ -29,6 +29,8 @@ function App() {
             ctaLabel="Bekijk FIX"
             icon={Wrench}
             secondaryIcon={CheckCircle2}
+            image={`${import.meta.env.BASE_URL}images/fix.png`}
+            imageAlt="Vergrootglas op code met foutdetectie en fix-stappen"
             accent="deep"
           />
 
@@ -41,6 +43,8 @@ function App() {
             ctaLabel="Bekijk BUILD"
             icon={Box}
             secondaryIcon={Code2}
+            image={`${import.meta.env.BASE_URL}images/build.png`}
+            imageAlt="Geautomatiseerde workflow met code, deployment en kwaliteitscontroles"
             accent="blue"
             reverse
             surface
@@ -55,6 +59,8 @@ function App() {
             ctaLabel="Bekijk SMART"
             icon={TrendingUp}
             secondaryIcon={Cpu}
+            image={`${import.meta.env.BASE_URL}images/smart.png`}
+            imageAlt="AI-netwerk met slimme, zelflerende automatisering"
             accent="sky"
           />
         </div>
