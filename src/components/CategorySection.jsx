@@ -37,12 +37,18 @@ export default function CategorySection({
   surface = false,
 }) {
   const a = ACCENTS[accent]
-  const bgClass = surface ? 'bg-[var(--bg-surface)]' : 'bg-[var(--bg-surface)] sm:bg-[var(--bg-app)]'
+  // Mobile: always the deep navy content band. Desktop/tablet: unchanged alternating light bands.
+  const bgClass = `bg-[var(--bg-navy)] ${surface ? 'sm:bg-[var(--bg-surface)]' : 'sm:bg-[var(--bg-app)]'}`
 
   return (
     <section id={id} className={`py-0 sm:border-t sm:border-[var(--border-subtle)] sm:py-16 ${bgClass}`}>
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+      <div className="mx-auto max-w-7xl sm:px-8">
         <div className={`flex flex-col items-center gap-0 sm:gap-10 lg:gap-16 ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
+          {/* Mobile only: the image runs edge-to-edge, flush against the section edges — no wrapper padding to fight */}
+          {image && (
+            <img src={image} alt={imageAlt || title} className="block h-auto w-full sm:hidden" />
+          )}
+
           {/* Tablet/desktop: the category's "dark visual card" — unchanged from before */}
           <div className="group relative hidden w-full sm:block lg:w-1/2">
             <div className={`pointer-events-none absolute inset-10 rounded-full blur-[70px] ${a.glow}`} />
@@ -86,10 +92,14 @@ export default function CategorySection({
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-blue">{eyebrow}</span>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">{title}</h2>
-            <p className="mt-4 max-w-lg text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
+          <div className="w-full px-6 py-8 sm:px-0 sm:py-0 lg:w-1/2">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-cyan sm:text-brand-blue">
+              {eyebrow}
+            </span>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[var(--text-primary-dark)] sm:text-[var(--text-primary)] sm:text-4xl">
+              {title}
+            </h2>
+            <p className="mt-4 max-w-lg text-base leading-relaxed text-[var(--text-secondary-dark)] sm:text-[var(--text-secondary)] sm:text-lg">
               {description}
             </p>
 
@@ -98,7 +108,8 @@ export default function CategorySection({
                 {tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700"
+                    className="rounded-full border border-sky-400/30 bg-white/5 px-3 py-1 text-xs font-medium text-sky-300
+                      sm:border-blue-200 sm:bg-blue-50 sm:text-blue-700"
                   >
                     {tag}
                   </span>
@@ -106,23 +117,27 @@ export default function CategorySection({
               </div>
             )}
 
+            {/* Mobile: clear tappable button */}
             <a
               href="#"
-              className="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue transition-colors hover:text-blue-700"
+              className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand-blue to-brand-cyan
+                px-5 py-3 text-sm font-semibold text-white shadow-md shadow-brand-blue/20 transition-transform
+                active:scale-[0.98] sm:hidden"
+            >
+              {ctaLabel}
+              <ArrowRight size={15} />
+            </a>
+
+            {/* Desktop/tablet: unchanged plain text link */}
+            <a
+              href="#"
+              className="mt-7 hidden items-center gap-1.5 text-sm font-semibold text-brand-blue transition-colors
+                hover:text-blue-700 sm:inline-flex"
             >
               {ctaLabel}
               <ArrowRight size={15} />
             </a>
           </div>
-
-          {/* Mobile only: the image runs edge-to-edge as a full-width band directly under the text, no card or gap around it */}
-          {image && (
-            <img
-              src={image}
-              alt={imageAlt || title}
-              className="ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] block h-auto w-screen max-w-none sm:hidden"
-            />
-          )}
         </div>
       </div>
     </section>
