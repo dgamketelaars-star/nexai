@@ -3,10 +3,10 @@ import { ArrowRight } from 'lucide-react'
 function Badge() {
   return (
     <span
-      className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15
-        bg-white/10 px-3.5 py-1.5 text-xs font-medium text-[var(--text-secondary-dark)] backdrop-blur-sm"
+      className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/15
+        bg-white/[0.07] px-4 py-2 text-xs font-medium text-[var(--text-secondary-dark)] backdrop-blur-sm"
     >
-      <span className="h-1.5 w-1.5 rounded-full bg-brand-cyan shadow-[0_0_8px_2px] shadow-brand-cyan/60" />
+      <span className="h-1.5 w-1.5 rounded-full bg-brand-cyan shadow-[0_0_6px_1px] shadow-brand-cyan/50" />
       AI &amp; automatisering voor kleine bedrijven
     </span>
   )
@@ -24,16 +24,26 @@ function Heading({ className = '' }) {
   )
 }
 
-function CtaButton() {
+function CtaRow() {
   return (
-    <a
-      href="#diensten"
-      className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-blue to-brand-cyan
-        px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-blue/30 transition-transform hover:scale-[1.03]"
-    >
-      Bekijk wat we doen
-      <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
-    </a>
+    <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+      <a
+        href="#diensten"
+        className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-blue to-brand-cyan
+          px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-blue/30 transition-transform hover:scale-[1.03]"
+      >
+        Bekijk wat we doen
+        <ArrowRight size={16} className="text-brand-orange transition-transform group-hover:translate-x-0.5" />
+      </a>
+
+      <a
+        href="#contact"
+        className="text-sm font-semibold text-[var(--text-secondary-dark)] underline decoration-2 underline-offset-4
+          decoration-transparent transition-colors hover:text-[var(--text-primary-dark)] hover:decoration-brand-orange"
+      >
+        Direct contact
+      </a>
+    </div>
   )
 }
 
@@ -66,14 +76,14 @@ export default function HeroVideo() {
           />
           <div className="pointer-events-none absolute -left-16 bottom-0 h-40 w-40 rounded-full bg-brand-blue/25 blur-[70px]" />
         </div>
-        <div className="bg-[var(--bg-hero-scrim)] px-5 pb-10 pt-7">
+        <div className="bg-[var(--bg-hero-scrim)] px-6 pb-12 pt-9">
           <Badge />
           <Heading className="text-4xl" />
-          <p className="mt-4 max-w-md text-base text-[var(--text-secondary-dark)]">
+          <p className="mt-5 max-w-md text-base text-[var(--text-secondary-dark)]">
             AI, automatisering en digitale oplossingen voor kleine bedrijven en ondernemers.
           </p>
-          <div className="mt-7">
-            <CtaButton />
+          <div className="mt-8">
+            <CtaRow />
           </div>
         </div>
       </div>
@@ -110,7 +120,7 @@ export default function HeroVideo() {
               AI, automatisering en digitale oplossingen voor kleine bedrijven en ondernemers.
             </p>
             <div className="mt-8">
-              <CtaButton />
+              <CtaRow />
             </div>
           </div>
         </div>

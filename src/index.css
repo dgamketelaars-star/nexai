@@ -7,6 +7,7 @@
   --color-brand-cyan: #38bdf8;
   --color-brand-purple: #6b5fe0;
   --color-brand-navy: #0b1730;
+  --color-brand-orange: #ff8a00;
 
   --animate-float: float 6s ease-in-out infinite;
 }
@@ -34,7 +35,7 @@ body {
   --bg-surface: #eef2f9;
   --bg-navy: #0b1730;
   --bg-navy-2: #142445;
-  --bg-hero-scrim: #060a16;
+  --bg-hero-scrim: #0a1226;
   --border-subtle: rgba(16, 27, 51, 0.1);
   --border-subtle-dark: rgba(255, 255, 255, 0.14);
   --text-primary: #101b33;

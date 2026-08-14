@@ -42,8 +42,8 @@ export default function Header() {
             onClick={() => setMenuOpen((o) => !o)}
             aria-label="Menu"
             aria-expanded={menuOpen}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border-subtle)]
-              text-[var(--text-primary)] md:hidden cursor-pointer"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border-subtle)]
+              text-[var(--text-primary)] transition-colors hover:border-brand-blue/40 md:hidden cursor-pointer"
           >
             {menuOpen ? <X size={18} strokeWidth={1.75} /> : <Menu size={18} strokeWidth={1.75} />}
           </button>

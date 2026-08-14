@@ -21,9 +21,25 @@ const ACCENTS = {
   },
 }
 
+function Tags({ tags, className = '' }) {
+  if (tags.length === 0) return null
+  return (
+    <div className={`flex flex-wrap gap-2 ${className}`}>
+      {tags.map((tag) => (
+        <span
+          key={tag}
+          className="rounded-full border border-sky-400/30 bg-white/5 px-3 py-1 text-xs font-medium text-sky-300
+            sm:border-blue-200 sm:bg-blue-50 sm:text-blue-700"
+        >
+          {tag}
+        </span>
+      ))}
+    </div>
+  )
+}
+
 export default function CategorySection({
   id,
-  eyebrow,
   title,
   description,
   tags = [],
@@ -41,12 +57,45 @@ export default function CategorySection({
   const bgClass = `bg-[var(--bg-navy)] ${surface ? 'sm:bg-[var(--bg-surface)]' : 'sm:bg-[var(--bg-app)]'}`
 
   return (
-    <section id={id} className={`py-0 sm:border-t sm:border-[var(--border-subtle)] sm:py-16 ${bgClass}`}>
+    <section id={id} className={`py-12 sm:border-t sm:border-[var(--border-subtle)] sm:py-16 ${bgClass}`}>
       <div className="mx-auto max-w-7xl sm:px-8">
         <div className={`flex flex-col items-center gap-0 sm:gap-10 lg:gap-16 ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
-          {/* Mobile only: the image runs edge-to-edge, flush against the section edges — no wrapper padding to fight */}
+          {/* Mobile only: one self-contained block — inset clickable visual with the name overlaid, then centered content */}
           {image && (
-            <img src={image} alt={imageAlt || title} className="block h-auto w-full sm:hidden" />
+            <div className="w-full sm:hidden">
+              <div className="px-6">
+                <a
+                  href="#"
+                  className="group relative block overflow-hidden rounded-3xl border border-white/10
+                    shadow-2xl shadow-black/40 transition-transform active:scale-[0.98]"
+                >
+                  <img src={image} alt={imageAlt || title} className="aspect-[3/2] w-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-5">
+                    <span className="mb-2 block h-[3px] w-9 rounded-full bg-brand-orange" />
+                    <h2 className="text-3xl font-bold tracking-tight text-white">{title}</h2>
+                  </div>
+                </a>
+              </div>
+
+              <div className="px-6 pt-6 text-center">
+                <p className="mx-auto max-w-sm text-base leading-relaxed text-[var(--text-secondary-dark)]">
+                  {description}
+                </p>
+
+                <Tags tags={tags} className="mt-5 justify-center" />
+
+                <a
+                  href="#"
+                  className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand-blue to-brand-cyan
+                    px-5 py-3 text-sm font-semibold text-white shadow-md shadow-brand-blue/20 transition-transform
+                    active:scale-[0.98]"
+                >
+                  {ctaLabel}
+                  <ArrowRight size={15} className="text-brand-orange" />
+                </a>
+              </div>
+            </div>
           )}
 
           {/* Tablet/desktop: the category's "dark visual card" — unchanged from before */}
@@ -92,50 +141,22 @@ export default function CategorySection({
             </div>
           </div>
 
-          <div className="w-full px-6 py-8 sm:px-0 sm:py-0 lg:w-1/2">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-cyan sm:text-brand-blue">
-              {eyebrow}
-            </span>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[var(--text-primary-dark)] sm:text-[var(--text-primary)] sm:text-4xl">
-              {title}
-            </h2>
-            <p className="mt-4 max-w-lg text-base leading-relaxed text-[var(--text-secondary-dark)] sm:text-[var(--text-secondary)] sm:text-lg">
+          {/* Tablet/desktop: text column — unchanged from before, just without the category-number eyebrow */}
+          <div className="hidden w-full sm:block lg:w-1/2">
+            <h2 className="text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">{title}</h2>
+            <p className="mt-4 max-w-lg text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
               {description}
             </p>
 
-            {tags.length > 0 && (
-              <div className="mt-5 flex flex-wrap gap-2">
-                {tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-sky-400/30 bg-white/5 px-3 py-1 text-xs font-medium text-sky-300
-                      sm:border-blue-200 sm:bg-blue-50 sm:text-blue-700"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            )}
+            <Tags tags={tags} className="mt-5" />
 
-            {/* Mobile: clear tappable button */}
             <a
               href="#"
-              className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand-blue to-brand-cyan
-                px-5 py-3 text-sm font-semibold text-white shadow-md shadow-brand-blue/20 transition-transform
-                active:scale-[0.98] sm:hidden"
+              className="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue transition-colors
+                hover:text-blue-700"
             >
               {ctaLabel}
-              <ArrowRight size={15} />
-            </a>
-
-            {/* Desktop/tablet: unchanged plain text link */}
-            <a
-              href="#"
-              className="mt-7 hidden items-center gap-1.5 text-sm font-semibold text-brand-blue transition-colors
-                hover:text-blue-700 sm:inline-flex"
-            >
-              {ctaLabel}
-              <ArrowRight size={15} />
+              <ArrowRight size={15} className="text-brand-orange" />
             </a>
           </div>
         </div>

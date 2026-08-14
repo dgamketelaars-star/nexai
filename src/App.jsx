@@ -22,7 +22,6 @@ function App() {
         <div id="diensten">
           <CategorySection
             id="fix"
-            eyebrow="Categorie 01"
             title="FIX"
             description="Er staat al iets, maar het werkt niet goed of je komt niet verder. Wij zoeken uit waar het misgaat en helpen het weer werkend te krijgen."
             tags={['Snel', 'Persoonlijk', 'Zonder gedoe']}
@@ -36,7 +35,6 @@ function App() {
 
           <CategorySection
             id="build"
-            eyebrow="Categorie 02"
             title="BUILD"
             description="Je hebt een idee voor een website, app, tool of digitaal systeem. Wij bouwen het van idee naar iets dat daadwerkelijk werkt."
             tags={['Op maat', 'Modern', 'Schaalbaar']}
@@ -52,7 +50,6 @@ function App() {
 
           <CategorySection
             id="smart"
-            eyebrow="Categorie 03"
             title="SMART"
             description="Laat technologie werk van je overnemen. We automatiseren terugkerende taken, koppelen systemen en bouwen slimme AI-oplossingen voor je bedrijf."
             tags={['Automatisering', 'AI', 'Efficiënt']}
