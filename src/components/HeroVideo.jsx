@@ -55,22 +55,34 @@ function HeroVideoTag({ className }) {
 export default function HeroVideo() {
   return (
     <section className="relative overflow-hidden">
-      {/* Mobile: video as a compact visual banner, copy sits below on a solid background so it always stays readable */}
-      <div className="sm:hidden">
-        <div className="relative h-[42vh] min-h-[280px] w-full overflow-hidden">
-          <HeroVideoTag className="absolute inset-0 h-full w-full object-cover object-[right_center]" />
-          <div
-            className="absolute inset-0"
-            style={{ background: 'linear-gradient(0deg, var(--bg-hero-scrim) 0%, transparent 45%, transparent 100%)' }}
-          />
-          <div className="pointer-events-none absolute -left-16 bottom-0 h-40 w-40 rounded-full bg-brand-blue/25 blur-[70px]" />
-        </div>
-        <div className="bg-[var(--bg-hero-scrim)] px-6 pb-12 pt-9">
+      {/* Mobile: one unified hero — copy overlaid directly in the video's own left negative space */}
+      <div className="relative h-[380px] w-full overflow-hidden sm:hidden">
+        <HeroVideoTag className="absolute inset-0 h-full w-full object-cover object-[27%_center]" />
+
+        {/* readability overlay: strong on the left where the copy sits, fading out to the right — same recipe as desktop */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(90deg, var(--bg-hero-scrim) 0%, color-mix(in srgb, var(--bg-hero-scrim) 78%, transparent) 28%, color-mix(in srgb, var(--bg-hero-scrim) 25%, transparent) 55%, transparent 75%)',
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(0deg, var(--bg-hero-scrim) 0%, transparent 22%, transparent 78%, color-mix(in srgb, var(--bg-hero-scrim) 55%, transparent) 100%)',
+          }}
+        />
+
+        <div className="pointer-events-none absolute -left-16 bottom-0 h-40 w-40 rounded-full bg-brand-blue/25 blur-[70px]" />
+
+        <div className="relative z-10 flex h-full flex-col justify-center px-6 pb-6">
           <Heading className="text-4xl" threeLines />
-          <p className="mt-5 max-w-md text-base text-[var(--text-secondary-dark)]">
+          <p className="mt-4 max-w-md text-base text-[var(--text-secondary-dark)]">
             AI, automatisering en digitale oplossingen voor kleine bedrijven en ondernemers.
           </p>
-          <div className="mt-8">
+          <div className="mt-7">
             <CtaRow />
           </div>
         </div>
