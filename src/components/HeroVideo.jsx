@@ -1,32 +1,14 @@
-function Badge() {
-  return (
-    <span
-      className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/15
-        bg-white/[0.07] px-4 py-2 text-xs font-medium text-[var(--text-secondary-dark)] backdrop-blur-sm"
-    >
-      <span className="h-1.5 w-1.5 rounded-full bg-brand-cyan shadow-[0_0_6px_1px] shadow-brand-cyan/50" />
-      AI &amp; automatisering voor kleine bedrijven
-    </span>
-  )
-}
+import { ArrowRight } from 'lucide-react'
 
 function Heading({ className = '', threeLines = false }) {
   return (
     <h1 className={`font-bold leading-[1.08] tracking-tight text-[var(--text-primary-dark)] ${className}`}>
       Slimme technologie.
       <br />
+      Gewoon goed{threeLines ? <br /> : ' '}
       <span className="bg-gradient-to-r from-brand-blue to-brand-cyan bg-clip-text text-transparent">
-        {threeLines ? (
-          <>
-            Gewoon goed
-            <br />
-            geregeld
-          </>
-        ) : (
-          'Gewoon goed geregeld'
-        )}
+        geregeld.
       </span>
-      <span className="text-brand-orange">.</span>
     </h1>
   )
 }
@@ -36,10 +18,11 @@ function CtaRow() {
     <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
       <a
         href="#diensten"
-        className="inline-flex items-center rounded-full bg-gradient-to-r from-brand-orange to-orange-600
-          px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-600/30 transition-transform hover:scale-[1.03]"
+        className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-blue to-brand-cyan
+          px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-blue/25 transition-transform hover:scale-[1.03]"
       >
         Bekijk wat we doen
+        <ArrowRight size={16} className="text-brand-orange transition-transform group-hover:translate-x-0.5" />
       </a>
 
       <a
@@ -83,7 +66,6 @@ export default function HeroVideo() {
           <div className="pointer-events-none absolute -left-16 bottom-0 h-40 w-40 rounded-full bg-brand-blue/25 blur-[70px]" />
         </div>
         <div className="bg-[var(--bg-hero-scrim)] px-6 pb-12 pt-9">
-          <Badge />
           <Heading className="text-4xl" threeLines />
           <p className="mt-5 max-w-md text-base text-[var(--text-secondary-dark)]">
             AI, automatisering en digitale oplossingen voor kleine bedrijven en ondernemers.
@@ -120,7 +102,6 @@ export default function HeroVideo() {
 
         <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-8">
           <div className="max-w-xl">
-            <Badge />
             <Heading className="text-5xl lg:text-6xl" />
             <p className="mt-5 max-w-md text-lg text-[var(--text-secondary-dark)]">
               AI, automatisering en digitale oplossingen voor kleine bedrijven en ondernemers.

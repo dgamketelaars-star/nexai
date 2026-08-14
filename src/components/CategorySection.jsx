@@ -1,6 +1,8 @@
+import { ArrowRight } from 'lucide-react'
+
 const CTA_CLASSES =
-  'inline-flex items-center rounded-xl bg-gradient-to-r from-brand-orange to-orange-600 px-5 py-3 ' +
-  'text-sm font-semibold text-white shadow-md shadow-orange-600/20 transition-transform'
+  'inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand-blue to-brand-cyan px-5 py-3 ' +
+  'text-sm font-semibold text-white shadow-md shadow-brand-blue/20 transition-transform'
 
 const ACCENTS = {
   deep: {
@@ -97,6 +99,7 @@ export default function CategorySection({
 
                 <a href="#" className={`mt-6 active:scale-[0.98] ${CTA_CLASSES}`}>
                   {ctaLabel}
+                  <ArrowRight size={15} className="text-brand-orange" />
                 </a>
               </div>
             </div>
@@ -156,6 +159,7 @@ export default function CategorySection({
 
             <a href="#" className={`mt-7 hover:scale-[1.03] ${CTA_CLASSES}`}>
               {ctaLabel}
+              <ArrowRight size={15} className="text-brand-orange" />
             </a>
           </div>
         </div>
