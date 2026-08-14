@@ -1,4 +1,6 @@
-import { ArrowRight } from 'lucide-react'
+const CTA_CLASSES =
+  'inline-flex items-center rounded-xl bg-gradient-to-r from-brand-orange to-orange-600 px-5 py-3 ' +
+  'text-sm font-semibold text-white shadow-md shadow-orange-600/20 transition-transform'
 
 const ACCENTS = {
   deep: {
@@ -51,6 +53,7 @@ export default function CategorySection({
   accent = 'blue',
   reverse = false,
   surface = false,
+  separator = false,
 }) {
   const a = ACCENTS[accent]
   // Mobile: always the deep navy content band. Desktop/tablet: unchanged alternating light bands.
@@ -63,6 +66,13 @@ export default function CategorySection({
           {/* Mobile only: one self-contained block — inset clickable visual with the name overlaid, then centered content */}
           {image && (
             <div className="w-full sm:hidden">
+              {/* Subtle, inset structural mark between services — not edge-to-edge, barely noticeable */}
+              {separator && (
+                <div className="mb-10 flex justify-center px-6">
+                  <div className="h-px w-12 bg-white/10" />
+                </div>
+              )}
+
               <div className="px-6">
                 <a
                   href="#"
@@ -85,14 +95,8 @@ export default function CategorySection({
 
                 <Tags tags={tags} className="mt-5 justify-center" />
 
-                <a
-                  href="#"
-                  className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand-blue to-brand-cyan
-                    px-5 py-3 text-sm font-semibold text-white shadow-md shadow-brand-blue/20 transition-transform
-                    active:scale-[0.98]"
-                >
+                <a href="#" className={`mt-6 active:scale-[0.98] ${CTA_CLASSES}`}>
                   {ctaLabel}
-                  <ArrowRight size={15} className="text-brand-orange" />
                 </a>
               </div>
             </div>
@@ -150,13 +154,8 @@ export default function CategorySection({
 
             <Tags tags={tags} className="mt-5" />
 
-            <a
-              href="#"
-              className="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue transition-colors
-                hover:text-blue-700"
-            >
+            <a href="#" className={`mt-7 hover:scale-[1.03] ${CTA_CLASSES}`}>
               {ctaLabel}
-              <ArrowRight size={15} className="text-brand-orange" />
             </a>
           </div>
         </div>

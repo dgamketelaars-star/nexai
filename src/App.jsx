@@ -3,6 +3,7 @@ import { TrendingUp, Wrench, Box, CheckCircle2, Code2, Cpu } from 'lucide-react'
 import Header from './components/Header'
 import HeroVideo from './components/HeroVideo'
 import Intro from './components/Intro'
+import ServicesIntro from './components/ServicesIntro'
 import CategorySection from './components/CategorySection'
 import NexieSection from './components/NexieSection'
 import NexieChat from './components/NexieChat'
@@ -20,6 +21,8 @@ function App() {
         <Intro />
 
         <div id="diensten">
+          <ServicesIntro />
+
           <CategorySection
             id="fix"
             title="FIX"
@@ -46,6 +49,7 @@ function App() {
             accent="blue"
             reverse
             surface
+            separator
           />
 
           <CategorySection
@@ -59,6 +63,7 @@ function App() {
             image={`${import.meta.env.BASE_URL}images/smart.png`}
             imageAlt="AI-netwerk met slimme, zelflerende automatisering"
             accent="sky"
+            separator
           />
         </div>
 

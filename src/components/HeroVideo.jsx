@@ -1,5 +1,3 @@
-import { ArrowRight } from 'lucide-react'
-
 function Badge() {
   return (
     <span
@@ -12,14 +10,23 @@ function Badge() {
   )
 }
 
-function Heading({ className = '' }) {
+function Heading({ className = '', threeLines = false }) {
   return (
     <h1 className={`font-bold leading-[1.08] tracking-tight text-[var(--text-primary-dark)] ${className}`}>
       Slimme technologie.
       <br />
       <span className="bg-gradient-to-r from-brand-blue to-brand-cyan bg-clip-text text-transparent">
-        Gewoon goed geregeld.
+        {threeLines ? (
+          <>
+            Gewoon goed
+            <br />
+            geregeld
+          </>
+        ) : (
+          'Gewoon goed geregeld'
+        )}
       </span>
+      <span className="text-brand-orange">.</span>
     </h1>
   )
 }
@@ -29,11 +36,10 @@ function CtaRow() {
     <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
       <a
         href="#diensten"
-        className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-blue to-brand-cyan
-          px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-blue/30 transition-transform hover:scale-[1.03]"
+        className="inline-flex items-center rounded-full bg-gradient-to-r from-brand-orange to-orange-600
+          px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-600/30 transition-transform hover:scale-[1.03]"
       >
         Bekijk wat we doen
-        <ArrowRight size={16} className="text-brand-orange transition-transform group-hover:translate-x-0.5" />
       </a>
 
       <a
@@ -78,7 +84,7 @@ export default function HeroVideo() {
         </div>
         <div className="bg-[var(--bg-hero-scrim)] px-6 pb-12 pt-9">
           <Badge />
-          <Heading className="text-4xl" />
+          <Heading className="text-4xl" threeLines />
           <p className="mt-5 max-w-md text-base text-[var(--text-secondary-dark)]">
             AI, automatisering en digitale oplossingen voor kleine bedrijven en ondernemers.
           </p>
