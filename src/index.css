@@ -3,10 +3,10 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
 
-  --color-brand-blue: #2563eb;
-  --color-brand-cyan: #38bdf8;
+  --color-brand-blue: #3182b8;
+  --color-brand-cyan: #4fa6c8;
   --color-brand-purple: #6b5fe0;
-  --color-brand-navy: #0b1730;
+  --color-brand-navy: #0b1d3a;
   --color-brand-orange: #ff9800;
 
   --animate-float: float 6s ease-in-out infinite;
@@ -31,18 +31,18 @@ body {
    base. Brand blue carries the primary identity; purple is used only as a rare, selective
    accent (Nexie's own signature), never as a base color. */
 :root {
-  --bg-app: #f8fafc;
+  --bg-app: #f4f7fa;
   --bg-surface: #eef2f9;
   --bg-navy: #0b1730;
   --bg-navy-2: #142445;
   --bg-hero-scrim: #0a1226;
-  --border-subtle: rgba(16, 27, 51, 0.1);
+  --border-subtle: rgba(11, 29, 58, 0.1);
   --border-subtle-dark: rgba(255, 255, 255, 0.14);
-  --text-primary: #101b33;
+  --text-primary: #0b1d3a;
   --text-secondary: #57647f;
   --text-primary-dark: #f3f6fc;
   --text-secondary-dark: #a6b2ce;
-  --glow-primary: rgba(37, 99, 235, 0.18);
+  --glow-primary: rgba(49, 130, 184, 0.18);
 }
 
 body {

@@ -18,7 +18,7 @@ function CtaRow() {
     <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
       <a
         href="#diensten"
-        className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-blue to-brand-cyan
+        className="group inline-flex items-center gap-2 rounded-full bg-brand-blue
           px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-blue/25 transition-transform hover:scale-[1.03]"
       >
         Bekijk wat we doen

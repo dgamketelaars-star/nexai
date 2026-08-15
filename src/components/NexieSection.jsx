@@ -5,11 +5,11 @@ export default function NexieSection({ onOpenChat }) {
   return (
     <div
       id="nexie"
-      className="relative overflow-hidden rounded-3xl border border-[var(--border-subtle-dark)]
-        bg-gradient-to-br from-[var(--bg-navy)] to-[var(--bg-navy-2)] p-6 shadow-xl shadow-slate-900/10 sm:p-8"
+      className="relative overflow-hidden rounded-3xl border border-[var(--border-subtle)]
+        bg-white p-6 shadow-lg shadow-slate-900/5 sm:p-8"
     >
-      <div className="pointer-events-none absolute -top-16 right-10 h-56 w-56 rounded-full bg-brand-cyan/15 blur-[90px]" />
-      <div className="pointer-events-none absolute -bottom-20 left-0 h-56 w-56 rounded-full bg-brand-purple/20 blur-[90px]" />
+      <div className="pointer-events-none absolute -top-16 right-10 h-56 w-56 rounded-full bg-brand-cyan/8 blur-[90px]" />
+      <div className="pointer-events-none absolute -bottom-20 left-0 h-56 w-56 rounded-full bg-brand-purple/10 blur-[90px]" />
 
       <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-10">
         {/* Visual: Nexie's own mascot — same footprint as the other cards' images, kept as its distinct signature */}
@@ -18,7 +18,7 @@ export default function NexieSection({ onOpenChat }) {
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-blue/25 to-brand-purple/25 blur-2xl" />
             <div
               className="relative flex h-full w-full animate-[float_6s_ease-in-out_infinite] items-center justify-center
-                rounded-full border border-white/12 bg-white/5 shadow-2xl backdrop-blur-sm"
+                rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface)] shadow-xl"
             >
               <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-blue to-brand-purple shadow-lg sm:h-24 sm:w-24">
                 <Bot size={44} strokeWidth={1.5} className="text-white" />
@@ -28,8 +28,8 @@ export default function NexieSection({ onOpenChat }) {
         </div>
 
         <div className="text-center lg:order-1 lg:flex-1 lg:text-left">
-          <h3 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">Vraag het Nexie!</h3>
-          <p className="mx-auto mt-3 max-w-sm text-base leading-relaxed text-[var(--text-secondary-dark)] lg:mx-0 lg:max-w-none">
+          <h3 className="text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl">Vraag het Nexie!</h3>
+          <p className="mx-auto mt-3 max-w-sm text-base leading-relaxed text-[var(--text-secondary)] lg:mx-0 lg:max-w-none">
             Niet zeker waar je moet beginnen? Vertel Nexie wat je wilt maken, oplossen of makkelijker wilt maken —
             dan wijst Nexie je de weg naar FIX, BUILD of SMART.
           </p>

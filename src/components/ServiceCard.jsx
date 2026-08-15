@@ -1,5 +1,5 @@
 export const CTA_CLASSES =
-  'inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-brand-blue to-brand-cyan px-5 py-3 ' +
+  'inline-flex items-center justify-center rounded-xl bg-brand-blue px-5 py-3 ' +
   'text-sm font-semibold text-white shadow-md shadow-brand-blue/20 transition-transform hover:scale-[1.03] active:scale-[0.98]'
 
 function Tags({ tags, className = '' }) {
@@ -9,7 +9,7 @@ function Tags({ tags, className = '' }) {
       {tags.map((tag) => (
         <span
           key={tag}
-          className="rounded-full border border-sky-400/30 bg-white/5 px-3 py-1 text-xs font-medium text-sky-300"
+          className="rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-3 py-1 text-xs font-medium text-brand-blue"
         >
           {tag}
         </span>
@@ -22,14 +22,14 @@ export default function ServiceCard({ id, title, description, tags = [], ctaLabe
   return (
     <div
       id={id}
-      className="overflow-hidden rounded-3xl border border-[var(--border-subtle-dark)]
-        bg-gradient-to-br from-[var(--bg-navy)] to-[var(--bg-navy-2)] p-6 shadow-xl shadow-slate-900/10 sm:p-8"
+      className="overflow-hidden rounded-3xl border border-[var(--border-subtle)]
+        bg-white p-6 shadow-lg shadow-slate-900/5 sm:p-8"
     >
       <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-10">
-        {/* Visual: the whole image is clickable, name overlaid as real text */}
+        {/* Visual: the whole image is clickable, name overlaid as real text — the dark photo now carries the contrast */}
         <a
           href="#"
-          className="group relative block shrink-0 overflow-hidden rounded-2xl border border-white/10
+          className="group relative block shrink-0 overflow-hidden rounded-2xl border border-[var(--border-subtle)]
             transition-transform active:scale-[0.98] lg:w-2/5"
         >
           <img src={image} alt={imageAlt || title} className="aspect-[3/2] w-full object-cover" />
@@ -41,7 +41,7 @@ export default function ServiceCard({ id, title, description, tags = [], ctaLabe
         </a>
 
         <div className="text-center lg:flex-1 lg:text-left">
-          <p className="mx-auto max-w-sm text-base leading-relaxed text-[var(--text-secondary-dark)] lg:mx-0 lg:max-w-none">
+          <p className="mx-auto max-w-sm text-base leading-relaxed text-[var(--text-secondary)] lg:mx-0 lg:max-w-none">
             {description}
           </p>
 
